@@ -25,11 +25,10 @@ const NavItem = ({
 }: NavItemsProps) => {
   return (
     <div className='flex'>
-      <div className='relative flex items-center'>
+      <div className='relative flex items-center '>
         <Button
-          className='gap-1.5'
-          onClick={handleOpen}
-          variant={isOpen ? 'secondary' : 'ghost'}>
+          className='gap-1.5 border bg-white text-black hover:text-white'
+          onClick={handleOpen}>
           {category.label}
           <ChevronDown
             className={cn(
@@ -46,7 +45,7 @@ const NavItem = ({
         <div
           onClick={() => close()}
           className={cn(
-            'absolute inset-x-0 top-full text-sm text-muted-foreground',
+            'absolute inset-x-0 top-full text-sm text-muted-foreground py-5',
             {
               'animate-in fade-in-10 slide-in-from-top-5':
                 !isAnyOpen,
