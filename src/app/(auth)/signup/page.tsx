@@ -29,15 +29,15 @@ const page = () => {
                 <div className="gap-1 grid py-2">
                   <Label htmlFor='email' className="text-white">Email</Label>
                   <Input className={cn ({
-                    'focus-visible:ring-red-500': true
+                    'focus-visible:ring-blue-500': true
                   })} 
-                  placeholder="you@example.com"/>
+                  placeholder="muhammadwasif@gmail.com"/>
                 </div>
 
                 <div className="gap-1 grid py-2">
                   <Label htmlFor='password' className="text-white">Password</Label>
                   <Input className={cn ({
-                    'focus-visible:ring-red-500': true
+                    'focus-visible:ring-blue-500': true
                   })} 
                   placeholder="Password"/>
                 </div>
