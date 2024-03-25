@@ -42,7 +42,6 @@ const Navitems = () => {
         return (
           <NavItem
             category={category}
-            close={close}
             handleOpen={handleOpen}
             isOpen={isOpen}
             key={category.value}

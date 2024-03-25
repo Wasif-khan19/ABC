@@ -10,7 +10,6 @@ type Category = (typeof PRODUCT_CATEGORIES)[number];
 interface NavItemsProps {
   category: Category;
   handleOpen: () => void;
-  close: () => void;
   isOpen: boolean;
   isAnyOpen: boolean;
 }
@@ -19,7 +18,6 @@ const NavItem = ({
   isAnyOpen,
   category,
   handleOpen,
-  close,
   isOpen,
 }: NavItemsProps) => {
   return (
