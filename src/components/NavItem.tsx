@@ -1,7 +1,6 @@
 "use client";
 import { ChevronDown } from "lucide-react";
 import { PRODUCT_CATEGORIES } from "../config";
-import { Button } from "./ui/button";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
@@ -24,13 +23,13 @@ const NavItem = ({
   isOpen,
 }: NavItemsProps) => {
   return (
-    <div className='flex'>
-      <div className='relative flex items-center '>
-        <Button
-          className='gap-1.5 border bg-white text-black hover:text-white'
+    <div className='hover:cursor-pointer flex text-[#F3EDE4] hover:text-gray-400 font-bold px-2 py-2'>
+      <div className='flex relative'>
+        <div
+          className='flex items-center border rounded px-2 py-2 border-[#F3F0EC4D]'
           onClick={handleOpen}>
           {category.label}
-          <ChevronDown
+          <ChevronDown color="white"
             className={cn(
               'h-4 w-4 transition-all text-muted-foreground',
               {
@@ -38,7 +37,7 @@ const NavItem = ({
               }
             )}
           />
-        </Button>
+        </div>
       </div>
 
       {isOpen ? (
@@ -52,11 +51,11 @@ const NavItem = ({
             }
           )}>
           <div
-            className='absolute inset-0 top-1/2 bg-white shadow'
+            className='absolute inset-0 top-1/2 bg-[#F3EDE4] shadow'
             aria-hidden='true'
           />
 
-          <div className='relative bg-white'>
+          <div className='relative bg-[#F3EDE4]'>
             <div className='mx-auto max-w-7xl px-8'>
               <div className='grid grid-cols-4 gap-x-8 gap-y-10 py-16'>
                 <div className='col-span-4 col-start-1 grid grid-cols-3 gap-x-8'>

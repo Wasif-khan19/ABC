@@ -1,24 +1,21 @@
 import Link from "next/link";
 import Wrapper from "./Wrapper";
-import Image from "next/image";
 import Navitems from "./Navitems";
-import { buttonVariants } from "./ui/button";
-import { Divide } from "lucide-react";
 import Cart from "./Cart";
 
 const Navbar = () => {
   const user = null;
   return (
-    <div className="sticky z-50 top-0 inset-x-0 h-16">
-      <header className="py-3">
+    <div className="sticky z-50 inset-x-0 h-16 top-0 bg-[#122315]">
+      <header className="bg-[#122315]">
         <Wrapper>
-          <div className="border rounded-md bg-white">
+          <div className="bg-[#122315]">
             <div className="flex h-16 items-center">
               {/* mob nav */}
 
               <div className="ml-4 flex lg:ml-0">
                 <Link href={"/"}>
-                  <Image alt="" src={"/logo.png"} width={130} height={130} />
+                  <p className="text-4xl font-extrabold text-[#F3EDE4]">PIXELIZE</p>
                 </Link>
               </div>
               <div className="hidden-z-50 lg:ml-8 lg:block lg:self-stretch">
@@ -29,28 +26,28 @@ const Navbar = () => {
                   {user ? null : (
                     <Link
                       href="/sign-in"
-                      className={buttonVariants()}
+                      className="bg-[#55DD4A] hover:bg-[#7edb77] py-2 px-4 rounded-xl text-[#122315] font-bold"
                     >
-                      Sign In
+                      LOG IN
                     </Link>
                   )}
 
-                  {user ? null : (
+                  {/* {user ? null : (
                     <span className="h-6 w-px bg-gray-200" aria-hidden="true" />
-                  )}
+                  )} */}
 
                   {user ? (
                     <p></p>
                   ) : (
                     <Link
                       href="signup"
-                      className={buttonVariants()}
+                      className="bg-[#55DD4A] hover:bg-[#7edb77] py-2 px-4 rounded-xl text-[#122315] font-bold"
                     >
-                      Sign Up
+                      JOIN NOW
                     </Link>
                   )}
 
-                  {user ? null : (
+                  {/* {user ? null : (
                     <span className="h-6 w-px bg-gray-200" aria-hidden="true" />
                   )}
 
@@ -61,9 +58,9 @@ const Navbar = () => {
                         aria-hidden="true"
                       />
                     </div>
-                  )}
+                  )} */}
 
-                  <div className="ml-4 flow-root lg:ml-6">
+                  <div className="ml-4 flow-root lg:ml-6 ">
                     <Cart/>
                   </div>
                 </div>

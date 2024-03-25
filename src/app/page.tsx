@@ -1,61 +1,79 @@
+import Navbar from "@/components/Navbar";
 import Wrapper from "@/components/Wrapper";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { ArrowDownToLine, CheckCircle, Palette } from "lucide-react";
 import Link from "next/link";
 
-const perks  = [
+const perks = [
   {
-    Name: 'Faster Than Light',
+    Name: "FASTER THAN LIGHT",
     Icon: ArrowDownToLine,
-    description: 'Get your all digital assets on just one click and it will in your pocket'
-  }, 
+    description:
+      "Get your all digital assets on just one click and it will in your pocket",
+  },
   {
-    Name: 'High Quality Assets',
+    Name: "HIGH QUALITY ASSETS",
     Icon: CheckCircle,
-    description: 'Step into a world of superior digital assets, meticulously curated for you'
-  }, 
+    description:
+      "Step into a world of superior digital assets, meticulously curated for you",
+  },
   {
-    Name: 'Fully Customization',
+    Name: "FULLY CUSTOMIZATION",
     Icon: Palette,
-    description: 'The all teplates on our store is fully customizeable and easy to share'
-  }, 
-]
+    description:
+      "The all teplates on our store is fully customizeable and easy to share",
+  },
+];
 
 export default function Home() {
   return (
     <>
+    <Navbar/>
       <Wrapper>
-        <div className="py-20 mx-auto text-center flex flex-col items-center max-w-3xl">
-          <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">
-            Unlock a world of superior{" "}
-            <span className="text-blue-500">Digital Assets</span> at your
-            fingertips.
-          </h1>
-          <p className="mt-6 text-lg max-w-pros text-muted-foreground">
-            Experience the BlitzWare Difference. Verified Quality, Seamless
-            Experience.
+        <div className="py-16 mx-auto text-center flex flex-col items-center max-w-3xl">
+          <p className="text-7xl tracking-tight font-extrabold text-[#F3EDE4] sm:text-9xl">
+            PREMIUM
+            <br />
+            <span className="text-[#55DD4A]">UI ASSETS</span>
+          </p>
+          <p className="mt-6 font-medium text-lg items-center text-[#F3EDE4]">
+            Unlock a seamless avenue for selling UI assets effortlessly. Our
+            platform streamlines the process, providing creators with a
+            user-friendly interface to showcase and market their digital
+            products. With intuitive tools for uploading, categorizing, and
+            pricing your assets, reaching a global audience of potential buyers
+            has never been easier.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 mt-6">
-            <Link href={"/products"} className={buttonVariants()}>
-              Browse Trending
+            <Link
+              href={"/products"}
+              className="text-lg rounded-xl font-bold py-3 px-4 bg-[#55DD4A] hover:bg-[#7edb77] text-[#122315]"
+            >
+              GET STARTED
             </Link>
-            <Button variant={"secondary"}>Our Mission &rarr;</Button>
           </div>
         </div>
       </Wrapper>
-      <section className="border-t border-gray-500">
+      <section className="bg-[#F3EDE4] mt-10">
         <Wrapper className="py-20">
           <div className="grid grid-col-1 gap-y-12 sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-3 lg:gap-x-8 lg:gap-y-0">
-            {perks.map((perks) =>(
-              <div key={perks.Name} className="text-center md:flex md:items-start md:text-left lg:block lg:text-center">
+            {perks.map((perks) => (
+              <div
+                key={perks.Name}
+                className="text-center md:flex md:items-start md:text-left lg:block lg:text-center"
+              >
                 <div className="md:flex-shrink-0 flex justify-center">
-                  <div className="h-16 w-16 flex items-center justify-center rounded-full bg-blue-100 text-blue-500">
-                    {<perks.Icon className="w-1/3 h-1/3"/>}
+                  <div className="h-16 w-16 flex items-center justify-center rounded-full bg-[#7edb77] text-[#122315]">
+                    {<perks.Icon className="w-1/3 h-1/3" />}
                   </div>
                 </div>
                 <div className="mt-6 md:ml-4 md:mt-0 lg:ml-0 lg:mt-6">
-                  <h3 className="text-base font-medium text-white">{perks.Name}</h3>
-                  <p className="mt-3 text-sm text-muted-foreground">{perks.description}</p>
+                  <h3 className="text-LG font-bold text-[#122315]">
+                    {perks.Name}
+                  </h3>
+                  <p className="mt-3 text-base text-black">
+                    {perks.description}
+                  </p>
                 </div>
               </div>
             ))}

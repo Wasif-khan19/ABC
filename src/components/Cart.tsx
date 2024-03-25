@@ -23,9 +23,9 @@ const Cart = () => {
       <SheetTrigger className="group -m-2 flex item-center p-2">
         <ShoppingCartIcon
           aria-hidden="true"
-          className="h-6 w-6 flex-shrink-0 text-black group-hover:text-gray-500"
+          className="h-6 w-6 flex-shrink-0 text-[#F3EDE4]"
         />
-        <span className="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800 "></span>
+        <span className="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800"></span>
       </SheetTrigger>
       <SheetContent className="flex w-full flex-col pr-0 sm:msx-w-lg">
         <SheetHeader className="space-y-2.5 pr-6">
@@ -54,9 +54,9 @@ const Cart = () => {
                 <SheetTrigger asChild>
                   <Link
                     href="/cart"
-                    className={buttonVariants({ className: "w-full" })}
+                    className='bg-[#55DD4A] hover:bg-[#7edb77] py-2 rounded-xl text-[#122315] font-bold w-full text-center'
                   >
-                    Checkout
+                    CHECKOUT
                   </Link>
                 </SheetTrigger>
               </SheetFooter>
@@ -74,11 +74,7 @@ const Cart = () => {
             <SheetTrigger>
               <Link
                 href="/products"
-                className={buttonVariants({
-                  variant: "link",
-                  size: "sm",
-                  className: "text-sm text-muted-foreground",
-                })}
+                className="text-sm font-medium text-[#55DD4A] hover:underline"
               >One click away! Add & checkout</Link>
             </SheetTrigger>
           </div>
