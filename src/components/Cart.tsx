@@ -1,6 +1,10 @@
 "use client";
 
+import { formatPrice } from "@/lib/utils";
 import { ShoppingCartIcon } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+import { Separator } from "./ui/separator";
 import {
   Sheet,
   SheetContent,
@@ -9,11 +13,6 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "./ui/sheet";
-import { Separator } from "./ui/separator";
-import { formatPrice } from "@/lib/utils";
-import Link from "next/link";
-import { buttonVariants } from "./ui/button";
-import Image from "next/image";
 
 const Cart = () => {
   const itemCount = 0;
@@ -54,7 +53,7 @@ const Cart = () => {
                 <SheetTrigger asChild>
                   <Link
                     href="/cart"
-                    className='bg-[#55DD4A] hover:bg-[#7edb77] py-2 rounded-xl text-[#122315] font-bold w-full text-center'
+                    className="bg-[#55DD4A] hover:bg-[#7edb77] py-2 rounded-xl text-[#122315] font-bold w-full text-center"
                   >
                     CHECKOUT
                   </Link>
@@ -68,14 +67,21 @@ const Cart = () => {
               aria-hidden="true"
               className="realtive mb-4 h-60 w-60 text-muted-foreground"
             >
-              <Image alt="shopping cart blitz ware" src="/Cart.jpg" width={300} height={300}/>
+              <Image
+                alt="shopping cart blitz ware"
+                src="/Cart.jpg"
+                width={300}
+                height={300}
+              />
             </div>
             <div className="text-lg font-bold">Your cart is empty</div>
             <SheetTrigger>
               <Link
                 href="/products"
                 className="text-sm font-medium text-[#55DD4A] hover:underline"
-              >One click away! Add & checkout</Link>
+              >
+                One click away! Add & checkout
+              </Link>
             </SheetTrigger>
           </div>
         )}

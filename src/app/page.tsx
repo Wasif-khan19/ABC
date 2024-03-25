@@ -1,6 +1,5 @@
 import Navbar from "@/components/Navbar";
 import Wrapper from "@/components/Wrapper";
-import { Button, buttonVariants } from "@/components/ui/button";
 import { ArrowDownToLine, CheckCircle, Palette } from "lucide-react";
 import Link from "next/link";
 
@@ -28,7 +27,7 @@ const perks = [
 export default function Home() {
   return (
     <>
-    <Navbar/>
+      <Navbar />
       <Wrapper>
         <div className="py-16 mx-auto text-center flex flex-col items-center max-w-3xl">
           <p className="text-7xl tracking-tight font-extrabold text-[#F3EDE4] sm:text-9xl">

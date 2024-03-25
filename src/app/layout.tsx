@@ -1,9 +1,9 @@
+import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
 import { ABeeZee } from "next/font/google";
 import "./globals.css";
-import { cn } from "@/lib/utils";
 
-const inter = ABeeZee({ subsets: ["latin"], weight:'400'});
+const inter = ABeeZee({ subsets: ["latin"], weight: "400" });
 
 export const metadata: Metadata = {
   title: "Pixelize",

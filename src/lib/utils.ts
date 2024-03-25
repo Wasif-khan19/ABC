@@ -7,17 +7,17 @@ export function cn(...inputs: ClassValue[]) {
 
 export function formatPrice(
   price: number | string,
-  option:{
-    currency?: "USD" | "EUR" | 'GBP' | "BDT",
-    notation?: Intl.NumberFormatOptions['notation']
+  option: {
+    currency?: "USD" | "EUR" | "GBP" | "BDT";
+    notation?: Intl.NumberFormatOptions["notation"];
   } = {}
 ) {
-  const {currency = 'USD', notation = 'compact'} = option
-  const numericPrice = typeof price === 'string'? parseFloat(price):price
-  return new Intl.NumberFormat('en-US',{
-    style: 'currency',
+  const { currency = "USD", notation = "compact" } = option;
+  const numericPrice = typeof price === "string" ? parseFloat(price) : price;
+  return new Intl.NumberFormat("en-US", {
+    style: "currency",
     currency,
     notation,
-    maximumFractionDigits: 2
-  }).format(numericPrice)
+    maximumFractionDigits: 2,
+  }).format(numericPrice);
 }

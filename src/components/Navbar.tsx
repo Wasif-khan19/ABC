@@ -1,7 +1,7 @@
 import Link from "next/link";
-import Wrapper from "./Wrapper";
-import Navitems from "./Navitems";
 import Cart from "./Cart";
+import Navitems from "./Navitems";
+import Wrapper from "./Wrapper";
 
 const Navbar = () => {
   const user = null;
@@ -15,7 +15,9 @@ const Navbar = () => {
 
               <div className="ml-4 flex lg:ml-0">
                 <Link href={"/"}>
-                  <p className="text-4xl font-extrabold text-[#F3EDE4]">PIXELIZE</p>
+                  <p className="text-4xl font-extrabold text-[#F3EDE4]">
+                    PIXELIZE
+                  </p>
                 </Link>
               </div>
               <div className="hidden-z-50 lg:ml-8 lg:block lg:self-stretch">
@@ -61,7 +63,7 @@ const Navbar = () => {
                   )} */}
 
                   <div className="ml-4 flow-root lg:ml-6 ">
-                    <Cart/>
+                    <Cart />
                   </div>
                 </div>
               </div>

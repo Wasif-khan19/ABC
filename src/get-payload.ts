@@ -1,10 +1,10 @@
+import dotenv from "dotenv";
 import path from "path";
+import payload from "payload";
 import type { InitOptions } from "payload/config";
-import payload from 'payload'
-import dotenv from 'dotenv'
 
 dotenv.config({
-  path: path.resolve(__dirname, '../.env'),
+  path: path.resolve(__dirname, "../.env"),
 });
 
 let cached = (global as any).payload;
@@ -26,22 +26,22 @@ export const getPayLoadClient = async ({ initOptions }: Args = {}) => {
   }
 
   if (cached.client) {
-    return cached.client
+    return cached.client;
   }
 
   if (!cached.promise) {
     cached.promise = payload.init({
-        secret: process.env.PAYLOAD_SECRET,
-        local: initOptions?.express ? false : true,
-        ...(initOptions || {}),
-    })
+      secret: process.env.PAYLOAD_SECRET,
+      local: initOptions?.express ? false : true,
+      ...(initOptions || {}),
+    });
   }
 
   try {
-    cached.client = await cached.promise
+    cached.client = await cached.promise;
   } catch (e: unknown) {
-    cached.promise = null
-    throw e
+    cached.promise = null;
+    throw e;
   }
-  return cached.client
+  return cached.client;
 };
