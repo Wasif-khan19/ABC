@@ -27,11 +27,10 @@ const perks = [
 export default function Home() {
   return (
     <>
-      <Navbar />
       <Wrapper>
         <div className="py-16 mx-auto text-center flex flex-col items-center max-w-3xl">
           <p className="text-4xl tracking-tight font-extrabold text-[#F3EDE4] sm:text-9xl">
-            PREMIUM
+            PREMIUM  
             <br />
             <span className="text-[#55DD4A]">UI ASSETS</span>
           </p>

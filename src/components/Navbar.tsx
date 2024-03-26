@@ -15,8 +15,8 @@ const Navbar = () => {
 
               <div className="ml-4 flex lg:ml-0">
                 <Link href={"/"}>
-                  <p className="text-4xl font-extrabold text-[#F3EDE4]">
-                    PIXELIZE
+                  <p className="text-4xl font-bold text-[#F3EDE4]">
+                    SPARKNIX
                   </p>
                 </Link>
               </div>

@@ -2,7 +2,7 @@
 "use client";
 import { Input } from "@/components/ui/input";
 import Link from "next/link";
-import { useForm } from "react-hook-form";
+import { useForm } from 'react-hook-form'
 import { zodResolver } from "@hookform/resolvers/zod";
 import {
   AuthCredentialsValidator,
@@ -28,7 +28,7 @@ const page = () => {
         <div className="mx-auto text-center flex flex-col items-center max-w-3xl">
           <div className="ml-0 flex lg:ml-0">
             <Link href={"/"}>
-              <p className="text-5xl font-black text-[#F3EDE4]">PIXELIZE</p>
+              <p className="text-5xl font-black text-[#F3EDE4]">SPARKNIX</p>
             </Link>
           </div>
           <p className="text-7xl pt-7 tracking-tight font-extrabold text-[#F3EDE4] sm:text-7xl">
