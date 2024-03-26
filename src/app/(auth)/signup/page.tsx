@@ -4,21 +4,29 @@ import { Input } from "@/components/ui/input";
 import Link from "next/link";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import {z} from 'zod'
+import {
+  AuthCredentialsValidator,
+  TAuthCredentialsValidator,
+} from "@/lib/Validator/account-validator-credential";
 
 const page = () => {
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm({
-    resolver: zodResolver(),
+  } = useForm<TAuthCredentialsValidator>({
+    resolver: zodResolver(AuthCredentialsValidator),
   });
+
+  const onSubmit = ({ email, password }: TAuthCredentialsValidator) => {
+    //send data to server
+  };
+
   return (
     <>
       <div className="container relative flex pt-20 flex-col items-center justify-center lg:px-0">
         <div className="mx-auto text-center flex flex-col items-center max-w-3xl">
-          <div className="ml-4 flex lg:ml-0">
+          <div className="ml-0 flex lg:ml-0">
             <Link href={"/"}>
               <p className="text-5xl font-black text-[#F3EDE4]">PIXELIZE</p>
             </Link>
@@ -34,18 +42,20 @@ const page = () => {
         </div>
         <div className="mx-auto pt-10 flex-w-full flex-col justify-center sm:w-[400px]">
           <div className="grid gap-6">
-            <form>
+            <form onSubmit={handleSubmit(onSubmit)}>
               <div className="grid gap-2">
                 <div className="gap-1 grid">
                   <Input
-                    className="bg-[#F3EDE4] text-xl py-7 px-3 rounded-xl text-[#122315] text-opacity-50"
+                    {...register("email")}
+                    className={`bg-[#F3EDE4] text-base py-7 px-5 rounded-xl text-[#122315] ${errors.email}`}
                     placeholder="Enter your email"
                   />
                 </div>
 
                 <div className="gap-1 grid py-2">
                   <Input
-                    className="bg-[#F3EDE4] text-xl py-7 px-3 rounded-xl text-[#122315] text-opacity-50"
+                    {...register("password")}
+                    className={`bg-[#F3EDE4] text-base py-7 px-5 rounded-xl text-[#122315] ${errors.password}`}
                     placeholder="Password"
                   />
                 </div>
